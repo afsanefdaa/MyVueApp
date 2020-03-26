@@ -35,6 +35,16 @@
         <a-icon class="icons" type="close" v-if="item.editing" @click="cancelEditing(item)"/>
       </div>
     </div>
+
+    <div class="remaining">
+      <div>
+        <a-checkbox />
+        <label class="check-all-label">
+          Check all
+        </label>
+      </div>
+      <p class="remaining-count"><span>{{ remaining }}</span> items left</p>
+    </div>
   </div>
 </template>
 
@@ -68,7 +78,7 @@ export default {
         {
           id: 4,
           title: 'Learn vuejs',
-          completed: false,
+          completed: true,
           editing: false,
         },
         {
@@ -79,6 +89,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    remaining() {
+      return this.todos.filter(el => !el.completed).length;
+    },
   },
   directives: {
     focus: {
@@ -127,7 +142,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
   .main {
     display: flex;
     flex-direction: column;
@@ -176,6 +191,9 @@ export default {
     padding: 0 5px;
     cursor: pointer;
   }
+  .icons :hover {
+    color: #42b983;
+  }
   .item-edit-input {
     margin: 0 0 0 10px;
     padding: 0;
@@ -191,5 +209,30 @@ export default {
   .item-edit-input :focus, ::selection {
     border: unset !important;
   }
-
+  .remaining {
+    border-top: 1px solid #dad8d8;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  .check-all-label {
+    padding: 0 10px;
+    color: #35495d;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .remaining-count {
+    color: #35495d;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+  }
+  .remaining-count span {
+    color: #42b983;
+    font-weight: bold;
+  }
+  /*.ant-input :hover {*/
+  /*  border-color: #42b983 !important;*/
+  /*}*/
 </style>
