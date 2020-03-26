@@ -69,7 +69,18 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  padding: 10px 0;
+
+  .filter-button {
+    padding: 0 10px;
+    color: #35495d;
+    font-weight: 500;
+    font-size: 12px;
+    &:hover {
+      border-color: #42b983;
+      color: #42b983;
+    }
+  }
 }
 .check-all-label {
   padding: 0 10px;
@@ -92,4 +103,14 @@
   &:hover {
     border-color: #42b983 !important;
   }
+}
+
+.active {
+  border-color: hotpink;
+  color: hotpink !important;
+}
+
+.body {
+  width: 100%;
+  margin-bottom: 10px;
 }
