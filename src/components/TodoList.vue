@@ -38,12 +38,12 @@
 
     <div class="remaining">
       <div>
-        <a-checkbox />
+        <a-checkbox :checked="!anyRemaining" @change="checkAllTodos"/>
         <label class="check-all-label">
           Check all
         </label>
       </div>
-      <p class="remaining-count"><span>{{ remaining }}</span> items left</p>
+      <p class="remaining-count"><span>{{ remaining }}</span>  items left</p>
     </div>
   </div>
 </template>
@@ -94,6 +94,9 @@ export default {
     remaining() {
       return this.todos.filter(el => !el.completed).length;
     },
+    anyRemaining() {
+      return this.remaining !== 0;
+    },
   },
   directives: {
     focus: {
@@ -136,6 +139,10 @@ export default {
       item.editing = false;
       // eslint-disable-next-line no-param-reassign
       item.title = this.beforeEditCache;
+    },
+    checkAllTodos() {
+      // eslint-disable-next-line no-param-reassign,no-return-assign
+      this.todos.forEach(el => el.completed = event.target.checked);
     },
   },
 };

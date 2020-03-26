@@ -10,34 +10,8 @@
   </Container>
 </template>
 
-<style>
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  .title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #35495d;
-  }
-  .logo {
-    width: 70px;
-  }
-  .footer{
-    background: #42b983;
-    width: 100%;
-    display: flex;
-    padding: 5px 0;
-    align-content: center;
-    justify-items: center;
-    color: #35495d;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: bold;
-  }
+<style scoped lang="scss">
+  @import "./Layout.scss";
 </style>
 <script>
 import Container from './Container';
