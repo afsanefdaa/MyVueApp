@@ -7,13 +7,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 import TodoList from './components/TodoList';
 import Layout from './components/Layout';
 
 export default {
   name: 'App',
-  components: { HelloWorld, TodoList, Layout },
+  components: { TodoList, Layout },
 };
 </script>
 

@@ -1,0 +1,66 @@
+.todo-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+
+  .todo {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .todo-item-input {
+      width: 100%;
+
+      &:focus, ::selection {
+        border: unset !important;
+      }
+
+      .todo-item-label {
+        font-size: 15px;
+        padding: 0 10px;
+        color: #35495d;
+        font-weight: 500;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: #42b983;
+      }
+
+      .item-edit-input {
+        margin: 0 0 0 10px;
+        padding: 0;
+        border-top: unset;
+        border-left: unset;
+        border-right: unset;
+        border-bottom: 1px solid #42b983;
+        border-radius: 0;
+        font-size: 15px;
+        color: #35495d;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    justify-content: flex-end;
+
+
+    .icons {
+      font-size: 16px;
+      padding: 0 5px;
+      cursor: pointer;
+
+      &:hover {
+        color: #42b983;
+      }
+    }
+  }
+}
